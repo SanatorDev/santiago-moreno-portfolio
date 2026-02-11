@@ -1,65 +1,84 @@
-import Image from "next/image";
+import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
+import { ArrowRight, Linkedin } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 min-h-screen relative overflow-hidden">
+      <div className="absolute inset-0 bg-[#0a0a0a] -z-10" />
+
+      <div className="w-full max-w-3xl flex flex-col items-center text-center space-y-12">
+        <div className="rounded-full border border-white/20 px-4 py-1.5 backdrop-blur-sm">
+          <span className="text-[11px] font-bold tracking-[0.2em] text-[#00ff9d] uppercase">
+            Coming Soon
+          </span>
+        </div>
+
+        <div className="space-y-6">
+          <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl text-white tracking-tight">
+            Santiago Moreno
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <h2 className="text-xl sm:text-2xl text-white/60 font-medium tracking-wide">
+            Senior Fullstack JavaScript Engineer
+          </h2>
+
+          <p className="text-white/40 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
+            10+ years crafting scalable web applications. Something new is coming.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+        <div className="w-full max-w-md mx-auto">
+          <form className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              placeholder="santiago.moreno.se@gmail.com"
+              className="flex-1 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#00ff9d]/50 focus:ring-1 focus:ring-[#00ff9d]/50 transition-all text-sm"
+              required
             />
-            Deploy Now
-          </a>
+
+            <button
+              type="submit"
+              className="bg-[#00ff9d] hover:bg-[#00ff9d]/90 text-black font-semibold rounded-lg px-6 py-3 flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            >
+              <span>Notify Me</span>
+
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </form>
+        </div>
+
+        <div className="flex items-center gap-6 pt-8">
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="https://github.com/SantiagoMorenoHidalgo"
+            className="p-3 rounded-full border border-white/10 text-white/60 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all group"
+            aria-label="GitHub"
           >
-            Documentation
+            <SiGithub className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/santiagomorenoh/"
+            className="p-3 rounded-full border border-white/10 text-white/60 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all group"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </a>
+
+          <a
+            href="https://x.com/santiagomorenoh"
+            className="p-3 rounded-full border border-white/10 text-white/60 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all group"
+            aria-label="X"
+          >
+            <SiX className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </a>
         </div>
-      </main>
-    </div>
+      </div>
+
+      <footer className="absolute bottom-8 text-center">
+        <p className="text-white/20 text-xs tracking-wide">
+          © {new Date().getFullYear()} Santiago Moreno
+        </p>
+      </footer>
+    </main>
   );
 }
