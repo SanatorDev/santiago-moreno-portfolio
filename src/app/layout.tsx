@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import { isFullSiteEnabled } from "@/lib/feature-flags";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,14 +14,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const fullSiteEnabled = isFullSiteEnabled();
+
   return (
     <html lang="en">
       <body className="min-h-screen">
-        <div className="flex min-h-screen flex-col">
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        {fullSiteEnabled ? (
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        ) : (
+          <main className="min-h-screen">{children}</main>
+        )}
       </body>
     </html>
   );

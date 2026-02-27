@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Feature Flag
+
+The full portfolio is hidden behind a feature flag.
+
+- Default behavior (`ENABLE_FULL_SITE` unset or `false`): only the Coming Soon page is accessible.
+- Full site enabled: set `ENABLE_FULL_SITE=true` in your environment (for local dev, add it to `.env.local`).
+
 ## Getting Started
 
 First, run the development server:

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { ArrowRight, Code2, Database, Globe, Server, Users, Zap } from "lucide-react";
+import { isFullSiteEnabled } from "@/lib/feature-flags";
 
 const skills = [
   { icon: Code2, label: "React / Next.js" },
@@ -21,6 +23,10 @@ const companies = [
 ];
 
 export default function HomePage() {
+  if (!isFullSiteEnabled()) {
+    redirect("/coming-soon");
+  }
+
   return (
     <div>
       <section className="relative overflow-hidden bg-foreground text-background">
