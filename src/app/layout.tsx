@@ -1,22 +1,11 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Santiago Moreno - Senior Fullstack JavaScript Engineer",
-  description: "Senior Fullstack JavaScript Engineer with 10+ years of experience.",
+  title: "Santiago Moreno - SanatorDev",
+  description: "Senior Full Stack Developer portfolio.",
 };
 
 export default function RootLayout({
@@ -26,10 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${playfair.variable} ${inter.variable} antialiased bg-[#0a0a0a] text-white selection:bg-[#00ff9d] selection:text-black`}
-      >
-        {children}
+      <body className="min-h-screen">
+        <div className="flex min-h-screen flex-col">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
